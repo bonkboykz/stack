@@ -34,7 +34,9 @@ COPY --from=pruner /app/out/pnpm-lock.yaml .
 COPY .gitignore .
 COPY pnpm-workspace.yaml .
 COPY turbo.json .
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store STACK_SKIP_TEMPLATE_GENERATION=true pnpm install --frozen-lockfile
+# Fails on Railway
+# RUN --mount=type=cache,id=pnpm,target=/pnpm/store STACK_SKIP_TEMPLATE_GENERATION=true pnpm install --frozen-lockfile
+RUN STACK_SKIP_TEMPLATE_GENERATION=true pnpm install --frozen-lockfile
 
 COPY --from=pruner /app/out/full/ .
 COPY docs ./docs
