@@ -50,5 +50,5 @@ for sentinel in $unhandled_sentinels; do
 done
 
 
-echo "Starting dashboard on port $DASHBOARD_PORT..."
+echo "Starting dashboard on port $PORT..."
 PORT=$PORT HOSTNAME=0.0.0.0 node apps/dashboard/server.js &
