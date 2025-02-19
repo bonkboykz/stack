@@ -37,4 +37,4 @@ else
 fi
 
 echo "Starting backend on port $PORT..."
-HOSTNAME=0.0.0.0 node apps/backend/server.js
+PORT=$PORT HOSTNAME=0.0.0.0 node apps/backend/server.js &

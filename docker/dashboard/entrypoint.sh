@@ -51,4 +51,4 @@ done
 
 
 echo "Starting dashboard on port $DASHBOARD_PORT..."
-PORT=$DASHBOARD_PORT HOSTNAME=0.0.0.0 node apps/dashboard/server.js &
+PORT=$PORT HOSTNAME=0.0.0.0 node apps/dashboard/server.js &
